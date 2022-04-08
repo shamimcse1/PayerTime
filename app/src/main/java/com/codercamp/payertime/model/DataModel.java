@@ -2,9 +2,6 @@ package com.codercamp.payertime.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
-
 public class DataModel {
 
     @SerializedName("code")
@@ -15,7 +12,7 @@ public class DataModel {
     private String status;
     @SerializedName("results")
     @Expose
-    private List<Results> results;
+    private Results results;
 
     public Integer getCode() {
         return code;
@@ -33,7 +30,13 @@ public class DataModel {
         this.status = status;
     }
 
-    public List<Results> getResults() {
+    public Results getResults() {
         return results;
     }
+
+    public void setResults(Results results) {
+        this.results = results;
+    }
+
+
 }

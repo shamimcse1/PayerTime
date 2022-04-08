@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.codercamp.payertime.helper.DataResource;
 import com.codercamp.payertime.model.DataModel;
+import com.codercamp.payertime.model.Datetime;
+import com.codercamp.payertime.model.Results;
 import com.codercamp.payertime.network.ApiInterface;
 import com.codercamp.payertime.network.RetrofitClient;
 
@@ -24,12 +26,14 @@ public class DataRepository {
 
         Call<DataModel> call = apiInterface.getAllData();
         mutableLiveData.postValue(DataResource.loading());
+
         call.enqueue(new Callback<DataModel>() {
             @Override
             public void onResponse(Call<DataModel> call, Response<DataModel> response) {
-                if (response.code() == 200 && response.body() != null) {
+                if (response.code() == 200 && response.body() != null){
                     mutableLiveData.postValue(DataResource.success(response.body()));
-                } else {
+                }
+                else {
                     mutableLiveData.postValue(DataResource.error(response.message()));
                 }
             }

@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel;
 
 import com.codercamp.payertime.helper.DataResource;
 import com.codercamp.payertime.model.DataModel;
+import com.codercamp.payertime.model.Datetime;
+import com.codercamp.payertime.model.Results;
 import com.codercamp.payertime.repository.DataRepository;
 
 public class DataViewModel extends ViewModel {
