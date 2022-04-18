@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navhost"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.codercamp.payertime.view.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_hadithFragment"
+            app:destination="@id/hadith" />
+        <action
+            android:id="@+id/action_homeFragment_to_duaFragment"
+            app:destination="@id/dua" />
+        <action
+            android:id="@+id/action_homeFragment_to_eventFragment"
+            app:destination="@id/event" />
+    </fragment>
+    <fragment
+        android:id="@+id/dua"
+        android:name="com.codercamp.payertime.view.fragment.DuaFragment"
+        android:label="Dua"
+        tools:layout="@layout/fragment_dua" >
+        <action
+            android:id="@+id/action_duaFragment_to_homeFragment"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/event"
+        android:name="com.codercamp.payertime.view.fragment.EventFragment"
+        android:label="Event"
+        tools:layout="@layout/fragment_event" >
+        <action
+            android:id="@+id/action_eventFragment_to_homeFragment"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/hadith"
+        android:name="com.codercamp.payertime.view.fragment.HadithFragment"
+        android:label="Hadith"
+        tools:layout="@layout/fragment_hadith" >
+        <action
+            android:id="@+id/action_hadithFragment_to_homeFragment"
+            app:destination="@id/home" />
+    </fragment>
+</navigation>
